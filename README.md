@@ -23,4 +23,3 @@ This is an early version of the mod, so there will likely be issues. Please feel
 * Transition between nights is too short
 * Subtitles are not correct
 * Timecode for main menu Bonnie animation is slightly too soon
-* AI level still "increases" during custom night
