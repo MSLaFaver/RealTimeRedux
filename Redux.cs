@@ -123,8 +123,6 @@ namespace Redux
 		{
 			System.Random rng = new System.Random();
 
-			var sub = custom ? 1 : 2;
-
 			int[][] levels = {
 				new[] { 0, 0, 0, 0 },
 				new[] { 0, 3, 1, 1 },
@@ -135,7 +133,12 @@ namespace Redux
 				customLevels
 			};
 
-			return levels[night - sub];
+			return levels[night - Sub() - 1];
+		}
+
+		public static int Sub()
+		{
+			return night < 7 || custom ? 0 : 1;
 		}
 
 		public static void LoadNight(TitleManager __instance)

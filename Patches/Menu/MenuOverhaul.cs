@@ -15,7 +15,7 @@ namespace Redux
 			PlayerPrefs.SetInt("PlayedBefore", 0);
 			PlayerPrefs.Save();
 
-			Global.LoadGameFromFile();
+			Global.SaveGameToFile();
 
 			DeviceColorManager.SetEffect(new StaticDeviceColorEffect(__instance.keyColor));
 
