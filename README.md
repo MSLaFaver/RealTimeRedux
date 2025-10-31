@@ -13,7 +13,7 @@ An overhaul mod to return the game to its original premise - a remake of _Five N
 7. Unzip _Redux_ to the directory where you installed _In Real Time_. You should now have a folder called `MSLaFaver-Redux` inside your `Mods` folder.
 8. You can now play _Five Nights at Freddy's: In Real Time >Redux_.
 
-Note: To play the game without the MelonLoader console, create a shortcut to the `.exe` (right click -> "Show more options" -> Create shortcut). Rename and place it wherever you want. Right click on the shortcut and append `--melonloader.hideconsole` to the `Target` field.
+Note: To play the game without the MelonLoader console, create a shortcut to the `.exe` (right click -> "Show more options" -> Create shortcut). Rename and place it wherever you want. Right click on the shortcut and select "Properties", and append `--melonloader.hideconsole` to the `Target` field.
 
 # Issues
 This is an early version of the mod, so there will likely be issues. Please feel free to submit them on the [Issues](https://github.com/MSLaFaver/RealTimeRedux/issues) tracker.
