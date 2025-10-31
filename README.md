@@ -6,7 +6,7 @@ An overhaul mod to return the game to its original premise - a remake of _Five N
 # How to Run
 1. Download and unzip _[Five Nights at Freddy's: In Real Time](https://gamejolt.com/games/realtimefnaf/832545)_ (which requires you to own [the original game](https://store.steampowered.com/app/319510/Five_Nights_at_Freddys) on Steam and have Steam running).
 2. Download the latest version of [MelonLoader](https://github.com/LavaGang/MelonLoader.Installer/releases/latest/download/MelonLoader.Installer.exe).
-3. Open the installer. If you have not run it before, select "Add Game Manually" and select the `.exe` for _In Real Time_. You can then select the game from the searchable list.
+3. Run the MelonLoader installer. If you have not run it before, select "Add Game Manually" and select the `.exe` for _In Real Time_. You can then select the game from the searchable list.
 4. Keep the default settings and select "Install." Close the installer when complete.
 5. Run the game once. A console should appear. Close once you see the GameJolt logo.
 6. Download the latest release of _Redux_: [Latest](https://github.com/MSLaFaver/RealTimeRedux/releases/latest)
