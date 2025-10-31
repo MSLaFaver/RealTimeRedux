@@ -22,3 +22,4 @@ This is an early version of the mod, so there will likely be issues. Please feel
 * Custom night is always set to 20/20/20/20
 * Transition between nights is too short
 * Subtitles are not correct
+* Timecode for main menu Bonnie animation is slightly too soon
