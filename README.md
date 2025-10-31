@@ -19,3 +19,4 @@ This is an early version of the mod, so there will likely be issues. Please feel
 ## Known Issues
 * Custom night is always set to 20/20/20/20
 * Transition between nights is too short
+* Subtitles are not correct
