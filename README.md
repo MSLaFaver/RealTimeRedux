@@ -1,3 +1,5 @@
+<img width="3456" height="1944" alt="image" src="https://github.com/user-attachments/assets/3910cd1f-65cb-4c58-b36a-a9422b5bcaa8" />
+
 # _Five Nights at Freddy's: In Real Time >Redux_
 An overhaul mod to return the game to its original premise - a remake of _Five Nights at Freddy's_ with live, moving animatronics. No changed story. No extra content.
 
