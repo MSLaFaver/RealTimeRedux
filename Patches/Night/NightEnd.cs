@@ -14,7 +14,7 @@ namespace Redux
 			{
 				Redux.night++;
 			}
-			else if (Redux.custom && Redux.customLevels.Sum() >= 80)
+			else if (Redux.custom && Redux.customLevels.Sum() >= 80 && Redux.enabled.All(b => b))
 			{
 				Redux.beatMaxMode = true;
 			}

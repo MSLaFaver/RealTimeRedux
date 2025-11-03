@@ -68,6 +68,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.InputSystem">
+      <HintPath>lib\Unity.InputSystem.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Unity.TextMeshPro.dll</HintPath>
@@ -96,6 +99,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>lib\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\UnityEngine.VideoModule.dll</HintPath>
@@ -104,6 +110,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="DEPENDENCIES.md" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,7 +122,7 @@
     <Compile Include="Patches\UI\NightText.cs" />
     <Compile Include="Patches\Foxy\FoxyNuke.cs" />
     <Compile Include="Patches\Misc\DoorHide.cs" />
-    <Compile Include="Patches\Foxy\FoxyStall.cs" />
+    <Compile Include="Patches\Misc\ClankerStall.cs" />
     <Compile Include="Patches\UI\PowerDisplay.cs" />
     <Compile Include="Patches\Misc\PowerOut.cs" />
     <Compile Include="Patches\Menu\MenuOverhaul.cs" />
@@ -124,7 +131,6 @@
     <Compile Include="Patches\Misc\PhoneCall.cs" />
     <Compile Include="Patches\Data\SettingsRemove.cs" />
     <Compile Include="Patches\UI\StarOverride.cs" />
-    <Compile Include="Patches\Night\NightSelect.cs" />
     <Compile Include="Patches\UI\TranslationReplace.cs" />
     <Compile Include="Patches\Menu\WarningScreen.cs" />
     <Compile Include="Redux.cs" />
@@ -133,20 +139,29 @@
     <ExtraFiles Include="lib\NVorbis.dll" Condition="Exists('lib\NVorbis.dll')" />
   </ItemGroup>
   <ItemGroup>
-    <AssetFiles Include="Assets\freddy.png" />
-    <AssetFiles Include="Assets\menu.ogg" />
-    <AssetFiles Include="Assets\night1.ogg" />
-    <AssetFiles Include="Assets\night2.ogg" />
-    <AssetFiles Include="Assets\night3.ogg" />
-    <AssetFiles Include="Assets\night4.ogg" />
-    <AssetFiles Include="Assets\night5.ogg" />
-    <AssetFiles Include="Assets\powerOut.ogg" />
+    <AssetFiles Include="Assets\Audio\menu.ogg" />
+    <AssetFiles Include="Assets\Audio\night1.ogg" />
+    <AssetFiles Include="Assets\Audio\night2.ogg" />
+    <AssetFiles Include="Assets\Audio\night3.ogg" />
+    <AssetFiles Include="Assets\Audio\night4.ogg" />
+    <AssetFiles Include="Assets\Audio\night5.ogg" />
+    <AssetFiles Include="Assets\Audio\powerOut.ogg" />
+    <AssetFiles Include="Assets\Image\arrow.png" />
+    <AssetFiles Include="Assets\Image\bonnie.png" />
+    <AssetFiles Include="Assets\Image\chica.png" />
+    <AssetFiles Include="Assets\Image\foxy.png" />
+    <AssetFiles Include="Assets\Image\freddy.png" />
+    <AssetFiles Include="Assets\Image\powerOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssetFiles Include="Assets\Image\down.png" />
+    <AssetFiles Include="Assets\Image\up.png" />
   </ItemGroup>
   <Target Name="PrepareModFolder" AfterTargets="Build" Condition=" '$(Configuration)' == 'Release' ">
     <MakeDir Directories="$(OutputPath)Mods\MSLaFaver-Redux" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(OutputPath)Mods\MSLaFaver-Redux" SkipUnchangedFiles="true" />
     <Copy SourceFiles="@(ExtraFiles)" DestinationFolder="$(OutputPath)Mods\MSLaFaver-Redux" SkipUnchangedFiles="true" Condition="@(ExtraFiles) != ''" />
-    <Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(OutputPath)Mods\\MSLaFaver-Redux\\Assets\\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" Condition="@(AssetFiles) != ''" />
+    <Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(OutputPath)Mods\\MSLaFaver-Redux\\%(Identity)')" SkipUnchangedFiles="true" Condition="@(AssetFiles) != ''" />
   </Target>
   <Target Name="CleanBinObj" BeforeTargets="BeforeBuild">
     <RemoveDir Directories="$(ProjectDir)bin\$(Configuration)" Condition="Exists('$(ProjectDir)bin\$(Configuration)')" />

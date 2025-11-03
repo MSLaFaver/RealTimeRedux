@@ -20,8 +20,9 @@ namespace Redux
 		public static bool beatMaxMode = false;
 
 		public static bool custom = false;
-		public static int[] customLevels = { 20, 20, 20, 20 };
-		public static double menuTimer = 0.0;
+		public static bool togglingCustomNight = false;
+		public static bool[] enabled = { false, false, false, false };
+		public static int[] customLevels = { 0, 0, 0, 0 };
 		public static bool playFired = false;
 		public static bool enableFired = false;
 		public static double camTimer;
@@ -37,14 +38,51 @@ namespace Redux
 		{
 			var melonInfo = System.Reflection.Assembly.GetExecutingAssembly()
 				.GetCustomAttribute<MelonLoader.MelonInfoAttribute>();
-			return "Mods/" + melonInfo?.Author + "-Redux/Assets/";
+			return "Mods/" + melonInfo?.Author + "-Redux/Assets";
+		}
+
+		public static void ChangeLevel(int clanker, bool increase)
+		{
+			if (increase)
+			{
+				if (customLevels[clanker] < 20)
+				{
+					customLevels[clanker]++;
+				}
+			}
+			else
+			{
+				if (customLevels[clanker] > 0)
+				{
+					customLevels[clanker]--;
+				}
+			}
+		}
+
+		public static int GetIdxFromName(string name)
+		{
+			C idx = C.Freddy;
+
+			switch (name.ToLower())
+			{
+				case "bonnie":
+					idx = C.Bonnie;
+					break;
+				case "chica":
+					idx = C.Chica;
+					break;
+				case "foxy":
+					idx = C.Foxy;
+					break;
+			}
+
+			return (int)idx;
 		}
 
 		public static void ResetMenu()
 		{
 			custom = false;
-			customLevels = new[] { 20, 20, 20, 20 };
-			menuTimer = 0.0;
+			togglingCustomNight = false;
 			playFired = false;
 			enableFired = false;
 			camTimer = 0.0;

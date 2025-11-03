@@ -30,9 +30,9 @@ namespace Redux
 		{
 			if (powerOutAudio == null)
 			{
-				powerOutAudio = Redux.LoadOgg($"{Redux.GetAssetsPath()}powerOut.ogg");
+				powerOutAudio = Redux.LoadOgg($"{Redux.GetAssetsPath()}/Audio/powerOut.ogg");
 
-				byte[] bytes = System.IO.File.ReadAllBytes($"{Redux.GetAssetsPath()}freddy.png");
+				byte[] bytes = System.IO.File.ReadAllBytes($"{Redux.GetAssetsPath()}/Image/powerOut.png");
 				Texture2D tex = new Texture2D(2, 2, TextureFormat.ARGB32, false);
 				ImageConversion.LoadImage(tex, bytes);
 

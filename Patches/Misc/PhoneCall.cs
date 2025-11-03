@@ -12,7 +12,7 @@ namespace Redux
 
 			if (Redux.night <= 5)
 			{
-				var path = $"{Redux.GetAssetsPath()}night{Redux.night}.ogg";
+				var path = $"{Redux.GetAssetsPath()}/Audio/night{Redux.night}.ogg";
 				var clip = Redux.LoadOgg(path);
 				if (clip != null)
 				{

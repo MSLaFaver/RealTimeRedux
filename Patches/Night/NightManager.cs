@@ -11,6 +11,14 @@ namespace Redux
 		{
 			var levels = Redux.AI();
 
+			for (int i = 0; i < levels.Length; i++)
+			{
+				if (Redux.custom && !Redux.enabled[i])
+				{
+					levels[i] = 0;
+				}
+			}
+
 			__instance.freddyAI.aiLevel = levels[(int)C.Freddy];
 			__instance.bonnieAI.aiLevel = levels[(int)C.Bonnie];
 			__instance.chicaAI.aiLevel = levels[(int)C.Chica];
@@ -56,12 +64,22 @@ namespace Redux
 
 			if (new[] { 2, 3, 4 }.Contains(__instance.hour))
 			{
-				__instance.bonnieAI.aiLevel++;
+				if (!Redux.custom || Redux.enabled[(int)C.Bonnie])
+				{
+					__instance.bonnieAI.aiLevel++;
+				}
 
 				if (__instance.hour != 2)
 				{
-					__instance.chicaAI.aiLevel++;
-					__instance.foxyAI.aiLevel++;
+					if (!Redux.custom || Redux.enabled[(int)C.Chica])
+					{
+						__instance.chicaAI.aiLevel++;
+					}
+
+					if (!Redux.custom || Redux.enabled[(int)C.Foxy])
+					{
+						__instance.foxyAI.aiLevel++;
+					}
 				}
 			}
 		}

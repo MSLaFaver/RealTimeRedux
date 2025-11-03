@@ -14,7 +14,7 @@ namespace Redux
 			{
 				if (__instance.text != null)
 				{
-					__instance.text.text = "Custom Night";
+					__instance.text.text = __instance.name == "CustomNightReady" ? "Ready" : "Custom Night";
 				}
 				normal = false;
 			}
