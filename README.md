@@ -19,7 +19,5 @@ Note: To play the game without the MelonLoader console, create a shortcut to the
 This is an early version of the mod, so there will likely be issues. Please feel free to submit them on the [Issues](https://github.com/MSLaFaver/RealTimeRedux/issues) tracker.
 
 ## Known Issues
-* Custom night is always set to 20/20/20/20
 * Transition between nights is too short
 * Subtitles are not correct
-* Timecode for main menu Bonnie animation is slightly too soon
