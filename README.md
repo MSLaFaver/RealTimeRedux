@@ -21,3 +21,5 @@ This is an early version of the mod, so there will likely be issues. Please feel
 ## Known Issues
 * Transition between nights is too short
 * Subtitles are not correct
+* Menu bugs after game over
+* Issues with Foxy jumpscare (from Real Time)
